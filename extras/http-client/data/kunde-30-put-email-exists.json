@@ -1,0 +1,11 @@
+{
+    "vereinsname": "FCTestput",
+    "email": "karlsruhe@acme.ch",
+    "mannschaft" : 1,
+    "geburtsdatum": "2022-01-01",
+    "homepage": "https://www.test.de",
+    "adresse": {
+        "plz": "12345",
+        "ort": "Testort"
+    }
+}

@@ -1,0 +1,70 @@
+' Copyright (C) 2019 - present Juergen Zimmermann, Hochschule Karlsruhe
+'
+' This program is free software: you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation, either version 3 of the License, or
+' (at your option) any later version.
+'
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with this program.  If not, see <https://www.gnu.org/licenses/>.
+@startuml FussballvereinGetController
+
+skinparam classAttributeIconSize 0
+
+package org.springframework {
+    package web.bind.annotation {
+        interface "@PathVariable" as PathVariable
+
+        interface "@RequestParam" as RequestParam
+
+        interface "@RequestBody" as RequestBody
+    }
+
+    package http {
+        class ResponseEntity<T>
+    }
+}
+
+package jakarta.servlet.http {
+    interface HttpServletRequest
+}
+
+package java.util {
+    interface Map<K,V>
+    class UUID
+}
+
+package com.acme.fussballverein {
+    package service {
+        class FussballvereinReadService << control >> << @Service >>
+    }
+
+    package rest #DDDDDD {
+
+        class FussballvereinGetController << boundary >> << @RestController >> << @RequestMapping >> {
+            + @GetMapping findById(@PathVariable id: UUID, request: HttpServletRequest): ResponseEntity<FussballvereinModel>
+            + @GetMapping find(@RequestParam queryParams: Map<String, String>, request: HttpServletRequest): ResponseEntity<CollectionModel<FussballvereinModel>>
+        }
+
+        FussballvereinGetController o-down-> "1" FussballvereinReadService : service
+
+        FussballvereinGetController .up.> ResponseEntity
+        FussballvereinGetController .up.> HttpServletRequest
+        FussballvereinGetController .up.> PathVariable
+        FussballvereinGetController .up.> RequestParam
+
+        FussballvereinGetController .up.> UUID
+        FussballvereinGetController .up.> Map
+    }
+}
+
+hide empty members
+
+
+
+@enduml

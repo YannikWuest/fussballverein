@@ -1,0 +1,11 @@
+{
+    "vereinsname": "FCAlphaput",
+    "email": "alpha@acme.de.put",
+    "mannschaft" : 1,
+    "geburtsdatum": "2022-01-03",
+    "homepage": "https://www.acme.de.put",
+    "adresse": {
+        "postleitzahl": "33333",
+        "ort": "Ahlen"
+    }
+}

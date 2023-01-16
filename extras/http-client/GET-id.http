@@ -1,0 +1,9 @@
+// https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html
+// https://www.jetbrains.com/help/idea/http-response-handling-examples.html#checking-response-headers-body
+
+### Suche mit vorhandener Kunde-ID
+GET {{baseUrl}}/rest/00000000-0000-0000-0000-000000000000
+Accept: application/hal+json
+
+### Suche mit nicht-vorhandener Kunde-ID: 404 (Not Found)
+GET {{baseUrl}}/rest/ffffffff-ffff-ffff-ffff-ffffffffffff

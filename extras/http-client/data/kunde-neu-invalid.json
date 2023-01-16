@@ -1,0 +1,12 @@
+{
+    "nachname": "?!:",
+    "email": "email",
+    "mannschaft" : 11,
+    "hasNewsletter": true,
+    "geburtsdatum": "3000-01-01",
+    "homepage": "https://www.test.de",
+    "adresse": {
+        "plz": "1",
+        "ort": ""
+    }
+}

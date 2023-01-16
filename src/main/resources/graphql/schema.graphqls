@@ -1,0 +1,51 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  fussballverein(id: ID!): Fussballverein
+  fussballvereine(input: Suchkriterien): [Fussballverein!]
+}
+
+type Mutation{
+  create(input: FussballvereinInput!) : CreatePayload
+}
+
+input FussballvereinInput{
+  vereinsname: String!
+  email: String!
+  entstehungsdatum: String
+  mannschaft: Int
+  homepage: String
+  adresse: AdresseInput!
+}
+
+input AdresseInput{
+  plz: String
+  ort: String
+}
+
+type CreatePayload{
+  id: String!
+}
+
+type Fussballverein{
+  id: ID
+  vereinsname: String!
+  email : String!
+  mannschaft: Int!
+  entstehungsdatum: String
+  homepge: String
+  adresse : Adresse!
+}
+
+type Adresse{
+  plz: String!
+  ort: String!
+}
+
+input Suchkriterien{
+  nachname: String
+  email: String
+}

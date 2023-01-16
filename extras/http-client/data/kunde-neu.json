@@ -1,0 +1,13 @@
+{
+    "vereinsname": "FCNachnamerest",
+    "email": "rest@rest.de",
+    "mannschaft" : 1,
+    "mitgliedId" : "00000000-0000-0000-0000-000000000040",
+    "entstehungsdatum": "2022-02-01",
+    "homepage": "https://www.rest.de",
+    "adresse": {
+        "postleitzahl" : "23142",
+        "ort": "Restort"
+    },
+    "erzeugt" : "2023-01-01"
+}
